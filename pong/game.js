@@ -48,10 +48,12 @@ window.onload = function() {
 
     //draw initial player1
     context.fillStyle="skyblue";
-    context.fillRect(player1.x, player1.y, playerWidth, playerHeight);
+    context.beginPath();
+    context.roundRect(player1.x, player1.y, playerWidth, playerHeight, 5);
+    context.fill();
 
     requestAnimationFrame(update);
-    document.addEventListener("kedown", movePlayer);
+    document.addEventListener("keydown", movePlayer);
     document.addEventListener("keyup", stopPlayer);
 }
 
@@ -66,7 +68,9 @@ function update() {
         player1.y = nextPlayer1Y;
     }
     //player1.y += player1.velocityY;
-    context.fillRect(player1.x, player1.y, playerWidth, playerHeight);
+    context.beginPath();
+    context.roundRect(player1.x, player1.y, playerWidth, playerHeight, 5);
+    context.fill();
     
     //player2
     let nextPlayer2Y = player2.y + player2.velocityY;
@@ -74,13 +78,17 @@ function update() {
         player2.y = nextPlayer2Y;
     }
     // player2.y += player2.velocityY;
-    context.fillRect(player2.x, player2.y, playerWidth, playerHeight);
+    context.beginPath();
+    context.roundRect(player2.x, player2.y, playerWidth, playerHeight, 5);
+    context.fill();
 
     //ball
     context.fillStyle = "white";
     ball.x += ball.velocityX;
     ball.y += ball.velocityY;
-    context.fillRect(ball.x, ball.y, ballWidth, ballHeight);
+    context.beginPath();
+    context.arc(ball.x + ballWidth / 2, ball.y + ballHeight / 2, ballWidth /2, 0, Math.PI * 2)
+    context.fill()
 
     if (ball.y <= 0 || (ball.y + ballHeight >= boardHeight)) {
         //if ball touches top or bottom of canvas

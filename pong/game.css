@@ -1,10 +1,26 @@
-body{
+body {
     text-align: center;
-    background-color: aqua;
+    background-color: #121212; 
+    color: white;
+    font-family: sans-serif;
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
-#board{
-    background-color: black;
-    border-top: 5px solid skyblue;
-    border-bottom: 5px solid skyblue;
+#board {
+    background-color: black; 
+    background-image: 
+        linear-gradient(rgba(135, 206, 235, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(135, 206, 235, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border: 3px solid skyblue;
+    box-shadow: 0 0 20px skyblue;
+    border-radius: 5px; 
+    margin-top: 20px;
+}
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: skyblue;
+    text-shadow: 0 0 10px skyblue;
 }
